@@ -36,7 +36,20 @@ h1,h2,h3,h4,.display,.faq summary{font-family:'Oswald','Saira Condensed',Georgia
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "sewerBusiness", "name": "Clearway Sewer Line Repair Scottsdale", "image": "https://clearwaysewerlinerepairscottsdale.site/logo.png", "url": "https://clearwaysewerlinerepairscottsdale.site/", "telephone": "(623) 292-7073", "email": "hello@clearwaysewerlinerepairscottsdale.site", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85251", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": "Scottsdale, AZ"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "07:00", "closes": "18:00"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://clearwaysewerlinerepairscottsdale.site/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://clearwaysewerlinerepairscottsdale.site/services/"}, {"@type": "ListItem", "position": 3, "name": "Sewer Line Replacement", "item": "https://clearwaysewerlinerepairscottsdale.site/services/sewer-line-replacement/"}, {"@type": "ListItem", "position": 4, "name": "Kierland", "item": "https://clearwaysewerlinerepairscottsdale.site/services/sewer-line-replacement/kierland/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know if I need a sewer line replacement?", "acceptedAnswer": {"@type": "Answer", "text": "Signs include frequent breakdowns, repeat drain clogs, and uneven drainage throughout your home in Kierland."}}, {"@type": "Question", "name": "What types of sewer lines are available?", "acceptedAnswer": {"@type": "Answer", "text": "Options range from central air systems to ductless mini-splits, suitable for various home sizes and layouts."}}, {"@type": "Question", "name": "How long does a sewer line replacement take?", "acceptedAnswer": {"@type": "Answer", "text": "Typically, a full system changeout can be completed in one day, depending on the complexity of the installation."}}, {"@type": "Question", "name": "Can I finance my new sewer line?", "acceptedAnswer": {"@type": "Answer", "text": "Many licensed sewer contractors offer financing options, making it easier to manage the cost of your new system."}}]}</script>
-<style>.quiz-fee{background:#eef7f5;border:1px solid #cfe6e0;border-radius:12px;padding:12px 14px;margin:4px 0 14px;font-size:14px;line-height:1.5;color:#26413c}.quiz-fee strong{color:#12302b}#qnote{width:100%;font:inherit;font-size:15px;color:inherit;background:#fff;border:1px solid #d8dee5;border-radius:10px;padding:10px 12px;resize:vertical;min-height:56px}#qnote:focus{outline:2px solid #17a08c;outline-offset:1px}.quiz-echo{display:none;font-size:13px;font-weight:700;color:#17a08c;margin:-4px 0 10px}.quiz-echo.on{display:block}.qopt{transition:transform .12s ease}.qopt:hover{transform:translateY(-1px)}@media(prefers-reduced-motion:reduce){.qopt{transition:none}.qopt:hover{transform:none}.quiz-step.active{animation:none!important;opacity:1!important}}</style></head><body>
+<style>.quiz-fee{background:#eef7f5;border:1px solid #cfe6e0;border-radius:12px;padding:12px 14px;margin:4px 0 14px;font-size:14px;line-height:1.5;color:#26413c}.quiz-fee strong{color:#12302b}#qnote{width:100%;font:inherit;font-size:15px;color:inherit;background:#fff;border:1px solid #d8dee5;border-radius:10px;padding:10px 12px;resize:vertical;min-height:56px}#qnote:focus{outline:2px solid #17a08c;outline-offset:1px}.quiz-echo{display:none;font-size:13px;font-weight:700;color:#17a08c;margin:-4px 0 10px}.quiz-echo.on{display:block}.qopt{transition:transform .12s ease}.qopt:hover{transform:translateY(-1px)}@media(prefers-reduced-motion:reduce){.qopt{transition:none}.qopt:hover{transform:none}.quiz-step.active{animation:none!important;opacity:1!important}}</style><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHXW9ZTSBW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CHXW9ZTSBW');
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"]'):null;
+    if(a&&window.gtag)gtag('event','phone_call',{link_url:a.getAttribute('href')});
+  },true);
+</script>
+</head><body>
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="/" class="brandlink" aria-label="Clearway Sewer Line Repair Scottsdale home">
@@ -248,6 +261,7 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
       saved=true;
       fetch('https://cockpit.fritzink.com/fleet-lead',{method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify(Object.assign({site:'clearway',source:'Quiz Popup',stage:'contact'},data))}).catch(function(){});
+      if(window.gtag)gtag('event','generate_lead',{form_name:'sewer quiz',stage:'contact'});
     }
     show(3);
   });
@@ -270,7 +284,7 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
       .then(function(r){ return r.json().catch(function(){ return null; }); })
       .then(function(j){
         if(!j||!j.ok) throw new Error('not saved');
-        form.style.display='none'; if(prog) prog.style.width='100%'; done.classList.add('show');
+        form.style.display='none'; if(prog) prog.style.width='100%'; done.classList.add('show'); if(window.gtag)gtag('event','schedule_service',{form_name:'sewer quiz',method:'quiz'});
       })
       .catch(function(){
         btn.disabled=false; btn.innerHTML='Book My Visit &rarr;';
