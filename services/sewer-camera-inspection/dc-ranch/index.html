@@ -246,8 +246,8 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
     // entirely; this keeps the lead without firing a dispatch or a text.
     if(!saved){
       saved=true;
-      fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(Object.assign({source:'Quiz Popup',stage:'contact'},data))}).catch(function(){});
+      fetch('https://cockpit.fritzink.com/fleet-lead',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(Object.assign({site:'clearway',source:'Quiz Popup',stage:'contact'},data))}).catch(function(){});
     }
     show(3);
   });
@@ -265,8 +265,8 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
     // returns ok:false when every store failed (e.g. its secrets are missing), and
     // the old code showed the success screen anyway - the customer walked away
     // believing they were booked while the lead went nowhere.
-    fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(Object.assign({source:'Quiz Popup',stage:'complete'},data))})
+    fetch('https://cockpit.fritzink.com/fleet-lead',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(Object.assign({site:'clearway',source:'Quiz Popup',stage:'complete'},data))})
       .then(function(r){ return r.json().catch(function(){ return null; }); })
       .then(function(j){
         if(!j||!j.ok) throw new Error('not saved');
@@ -319,7 +319,7 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
       if(actrl) actrl.abort();
       actrl=new AbortController();
       if(awrap) awrap.classList.add('busy');
-      fetch('/api/addr?q='+encodeURIComponent(v),{signal:actrl.signal})
+      fetch('https://cockpit.fritzink.com/fleet-addr?q='+encodeURIComponent(v),{signal:actrl.signal})
         .then(function(r){return r.json();})
         .then(function(j){ if(awrap)awrap.classList.remove('busy'); adraw((j&&j.suggestions)||[]); })
         .catch(function(){ if(awrap)awrap.classList.remove('busy'); });
@@ -354,7 +354,7 @@ if(vis&&'IntersectionObserver'in window){new IntersectionObserver(function(es,o)
       if(!fd.phone&&!fd.email) return;
       var btn=f.querySelector('[type=submit]');
       if(btn){btn.disabled=true;btn.textContent='Sending...';}
-      fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(fd)})
+      fetch('https://cockpit.fritzink.com/fleet-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({site:'clearway'},fd))})
         .then(function(r){ return r.json().catch(function(){ return null; }); })
         .then(function(j){
           if(!j||!j.ok) throw new Error('not saved');
